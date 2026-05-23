@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel Booking Wedsite</title>
+        <style>
+
+:root{
+--primary:#00e5ff;
+--text:#f5f7ff;
+--muted:#d4d4d4;
+--card:rgba(255,255,255,.08);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+color:var(--text);
+
+background:
+radial-gradient(
+circle at top left,
+rgba(255,255,255,.15),
+transparent 20%
+),
+
+linear-gradient(
+135deg,
+#38bdf8,
+#0f766e,
+#164e63
+);
+
+background-attachment:fixed;
+
+min-height:100vh;
+
+}
+/* Navigation */
+
+header{
+position:sticky;
+top:0;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+padding:20px;
+z-index:100;
+}
+
+.topbar{
+width:90%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:25px;
+font-weight:bold;
+color:var(--primary);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+/* Main page */
+
+.page{
+width:90%;
+margin:auto;
+padding:40px 0;
+}
+
+/* Hero */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:25px;
+margin-bottom:60px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+max-width:800px;
+line-height:1.8;
+color:var(--muted);
+}
+
+.hero-image img{
+width:900px;
+max-width:100%;
+height:350px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 0 20px black;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.primary{
+background:var(--primary);
+color:black;
+}
+
+.secondary{
+border:1px solid white;
+color:white;
+}
+
+/* Sections */
+
+.section{
+margin-bottom:60px;
+}
+
+.section h2{
+margin-bottom:25px;
+font-size:35px;
+}
+
+/* Destination cards */
+
+.destination-grid{
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+}
+
+.destination-card{
+
+background:var(--card);
+
+padding:20px;
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.5s;
+}
+
+.destination-card:hover{
+
+transform:translateY(-10px);
+}
+
+.destination-card img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:15px;
+}
+
+.destination-card h3{
+
+margin:15px 0;
+}
+
+.book-btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:10px 20px;
+
+background:var(--primary);
+
+border-radius:20px;
+
+text-decoration:none;
+
+color:black;
+
+font-weight:bold;
+}
+
+/* Table */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+}
+
+th,td{
+
+padding:15px;
+
+border:1px solid rgba(255,255,255,.2);
+
+text-align:center;
+}
+
+th{
+background:rgba(0,229,255,.2);
+}
+
+/* Booking Form */
+
+.form-box{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:20px;
+}
+
+form{
+
+display:grid;
+
+gap:18px;
+}
+
+input,
+textarea,
+select{
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+}
+
+textarea{
+
+height:120px;
+}
+
+.submit{
+
+background:var(--primary);
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* Contact */
+
+.contact{
+
+background:var(--card);
+
+padding:25px;
+
+border-radius:20px;
+
+line-height:2;
+}
+
+/* Footer */
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+color:gray;
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:40px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+}
+
+</style>
+    </head>
+    <body>
+        <header>
+            <div class="topbar">
+                <div class="logo">TravelX</div>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Destinations</a>
+                    <a href="#">Bookings</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Meenish Travel Booking Website</h1>
+                <h2>• Explore • Dream • Travel •</h2>
+                <h3>Explore the World with TravelX</h3>
+                <p>Your ultimate travel companion. Discover amazing destinations, book your trips, and create unforgettable memories with us.</p>
+                <div class="buttons">
+                    <a href="#" class="btn primary">Book Now</a>
+                    <a href="#" class="btn secondary">Learn More</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image">
+                </div>
+            </section>
+            <!-- Destinations Section -->
+            <section class="section">
+                <h2>Popular Destinations</h2>
+                <div class="destination-grid">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image">
+                        <p>Goa, India</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                        <p>Beach destination<br>₹8,999</p>
+                    </div>
+                    <div class="destination-card">
+                        <!-- <img src="https://images.unsplash.com/photo-1506744038136-462>73834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image"> -->
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60">
+                        <p>Oooty, India</p>
+                        <p>Hill station destination. Beautiful Sunrise scenery<br>₹6,999</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image">
+                        <p>Hyderabad, India</p>
+                        <p>City experience, Historical places<br>₹7,999</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image">
+                        <p>Manali, India</p>
+                        <p>Mountain destination with snow-capped peaks<br>₹10,999</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwcGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Travel Image">
+                        <p>Dubai, UAE</p>
+                        <p>Desert destination it has very unique experiences<br>₹49,999</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+            </section>
+            <!-- Booking Table Section -->
+            <section class="section">
+                <h2>Your Bookings</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Day</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Goa, India</td>
+                            <td>3 Days</td>
+                            <td>₹8,999</td>
+                        </tr>
+                        <tr>
+                            <td>Oooty, India</td>
+                            <td>2 Days</td>
+                            <td>₹6,999</td>
+                        </tr>
+                        <tr>
+                            <td>Hyderabad, India</td>
+                            <td>4 Days</td>
+                            <td>₹7,999</td>
+                        </tr>
+                        <tr>
+                            <td>Manali, India</td>
+                            <td>5 Days</td>
+                            <td>₹10,999</td>
+                        </tr>
+                        <tr>
+                            <td>Dubai, UAE</td>
+                            <td>7 Days</td>
+                            <td>₹49,999</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <h2>Why Choose Us?<br><br></h2>
+            <p>At TravelX, we are passionate about making your travel dreams come true.With our user-friendly platform, you can easily explore a wide range of destinations, compare prices, and book your trips with confidence. We offer personalized recommendations, exclusive deals, and 24/7 customer support to ensure that your travel experience is seamless and unforgettable. Whether you're looking for a relaxing beach getaway, an adventurous mountain escape, or a cultural city tour, TravelX has got you covered. Join us on this journey and let's create unforgettable memories together!<br><br></p>
+            <ul>
+                <li>Affordable Prices<br><br></li>
+                <li>Expericenced Guides<br><br></li>
+                <li>24/7 Customer Support<br><br></li>
+                <li>Safe Travel<br><br></li>
+            </ul>
+            <br>
+            <!--Booking Form -->
+            <section class="section">
+                <h2>Book Your Trip</h2>
+                <div class="form-box">
+                    <form>
+                        <label for="booking">Select Package:</label>
+                        <select id="booking" required>
+                            <option value="">Select Package</option>
+                            <option value="goa">Goa, India - ₹8,999</option>
+                            <option value="ooty">Oooty, India - ₹6,999</option>
+                            <option value="hyderabad">Hyderabad, India - ₹7,999</option>
+                            <option value="manali">Manali, India - ₹10,999</option>
+                            <option value="dubai">Dubai, UAE - ₹49,999</option>
+                        </select>
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                        <label for="date">Travel Date:</label>
+                        <input type="date" id="date" required>
+                        <label for="people">Number of People:</label>
+                        <input type="number" id="people" placeholder="Number of People" required>
+                        <label for="requests">Additional Requests:</label>
+                        <textarea id="requests" placeholder="Additional Requests"></textarea>
+                        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer;" type="submit" class="submit">Submit Booking</button>
+                    </form>
+                </div>
+            </section>
+            <!-- Contact Section -->
+            <section class="section">
+                <h2>Contact Us</h2>
+                <div class="contact">
+                    <p><strong>Email:</strong> info@travelx.com</p>
+                    <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+                    <p><strong>Address:</strong> 123 Travel Street, City, State 12345</p>
+                    <p><strong>Instagram:</strong> @travelx</p>
+                </div>
+            </section>
+        </div>
+        <footer>
+            &copy; 2026 TravelX. All rights reserved.
+        </footer>
+    </body>
+</html>
